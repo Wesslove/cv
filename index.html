@@ -1,121 +1,183 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Mon CV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV – KOUKA Adhonaï Junior Wesslove</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; display: flex; justify-content: center; padding: 2rem; }
+    .cv { display: grid; grid-template-columns: 280px 1fr; max-width: 960px; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+
+    /* SIDEBAR */
+    .sidebar { background: #1e293b; color: #e2e8f0; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
+    .avatar-wrap { text-align: center; }
+    .avatar { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #3b82f6; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #93c5fd; font-weight: 600; background: #334155; }
+    .name { font-size: 17px; font-weight: 600; color: #f1f5f9; line-height: 1.4; margin-bottom: 0.5rem; }
+    .job-title { font-size: 11.5px; color: #94a3b8; line-height: 1.5; }
+    .section-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #3b82f6; border-bottom: 1px solid #334155; padding-bottom: 6px; margin-bottom: 12px; }
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; color: #94a3b8; }
+    .contact-list li i { color: #3b82f6; font-size: 14px; margin-top: 2px; flex-shrink: 0; width: 14px; }
+    .edu-item { margin-bottom: 14px; }
+    .edu-year { font-size: 11px; color: #3b82f6; font-weight: 600; }
+    .edu-title { font-size: 12.5px; color: #e2e8f0; line-height: 1.4; margin-top: 2px; }
+    .edu-place { font-size: 11.5px; color: #64748b; margin-top: 2px; }
+    .lang-bar { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #94a3b8; }
+    .bar { flex: 1; height: 4px; background: #334155; border-radius: 2px; }
+    .bar-fill { height: 100%; background: #3b82f6; border-radius: 2px; }
+    .hobbies { display: flex; flex-wrap: wrap; gap: 6px; }
+    .hobby-pill { font-size: 11px; padding: 3px 10px; background: #334155; color: #94a3b8; border-radius: 20px; }
+
+    /* MAIN */
+    .main { background: #ffffff; padding: 2rem; display: flex; flex-direction: column; gap: 1.75rem; }
+    .main-section-label { font-size: 14px; font-weight: 600; color: #1e293b; border-left: 3px solid #3b82f6; padding-left: 10px; margin-bottom: 14px; }
+    .skill-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; border: 1px solid #bfdbfe; color: #1d4ed8; background: #eff6ff; }
+    .timeline-item { display: flex; gap: 12px; margin-bottom: 14px; }
+    .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; flex-shrink: 0; margin-top: 5px; }
+    .tl-date { font-size: 11px; color: #94a3b8; margin-bottom: 2px; }
+    .tl-title { font-size: 13.5px; font-weight: 600; color: #1e293b; }
+    .tl-place { font-size: 12px; color: #64748b; margin-top: 2px; }
+    .qualities { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .quality-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #475569; display: flex; align-items: center; gap: 8px; }
+    .quality-card i { color: #3b82f6; font-size: 15px; }
+  </style>
 </head>
-<body class="bg-light">
-    <div class="container p-5">
-        <div class="row">
-            <div class="col-lg-4 bg-dark text-white text-center py-4">
-                    <div class="header-left">
-                    <img  src="IMG_20220318_141452_1.jpg" alt="myself" class="img-thumbnail rounded-circle mb-3">
-                    <h1 class="display-5">KOUKA Adhonaï Junior Wesslove</h1>
-                    <h4  class="lead text-uppercase text-white-60 mb-4">Developpeur web</h4>
-            </div>
-                <div>
-                    <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">contacts</h5>
-                    <ul class="list-unstyled text-white-50 ml-7 py-3 text-left">
-                            <li class="list-item">
-                                <!--les icônes bootstrap à mettre-->
-                                <i class="fa fa-phone mx-4"></i>
-                                +242064473655/055524805
-                            </li>
-                        <li class="list-item">
-                            <!--les icônes bootstrap à mettre-->
-                            <i class="fa fa-linkedin mx-4"></i>
-                            Wesslove TARRY
-                        </li>
-                        <li class="list-item">
-                            <!--les icônes bootstrap à mettre-->
-                            <i class="fa fa-instagram mx-4"></i>
-                            Wesslove_codeur
-                        </li>
-                        <li class="list-item">
-                            <!--les icônes bootstrap à mettre-->
-                            <i class="fa fa-envelope mx-4"></i>
-                            koukajuniorwesslove@gmail.com
-                        </li>
-                        
-                    </ul>
-                </div>
+<body>
+  <div class="cv">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="avatar-wrap">
+        <div class="avatar">KAJ</div>
+        <p class="name">KOUKA Adhonaï Junior Wesslove</p>
+        <p class="job-title">Software Engineer · Fullstack (React, Python, .NET) · Microsoft 365 Dev: SPFx, Power Platform & PowerShell</p>
+      </div>
 
-                <div>
-                        <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">Cursus scolaire</h5>
-                       <ul class="list text-white-50 ml-6 py-4 text-left text-capitalize">
-                                <li class="list-item">JUIN 2021 : Baccalauréat technique en science économique, au lycée technique 1er mai de Brazzaville</li>
-                                <br>
-                                <li class="list-item">JUIN 2018 : Brevet d’étude du 1er cycle, au CEG AMITIÉ de Bacongo-Brazzaville </li>
-                                <br>
-                                <li class="list-item">JUIN 2014 : certificat d’étude primaire et élémentaire</li>
+      <div>
+        <p class="section-label">Contacts</p>
+        <ul class="contact-list">
+          <li><i class="fa fa-phone"></i> +242 06 447 3655 / 055 524 805</li>
+          <li><i class="fa fa-linkedin"></i> Wesslove TARRY</li>
+          <li><i class="fa fa-instagram"></i> Wesslove_codeur</li>
+          <li><i class="fa fa-envelope"></i> adhonaikouka@gmail.com</li>
+        </ul>
+      </div>
 
-                    </ul>
-                </div>
-                <div>
-                  <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">loisirs</h5>
-                    <ul class="list text-white-50 ml-5 py-2 text-left text-capitalize">
-                            <li class="list-item">Participation au projet web avec des potes</li>
-                            <li class="list-item">Musique : écouté</li>
-                            <li class="list-item">Sport</li>
-                            <li class="list-item">course à pied</li>
-                            <li class="list-item">handball: jouer</li>
-
-                    </ul>
-                </div>
-                <div>
-                  <h5 class="text-uppercase bg-white text-dark py-2 rounded-pill">Langues</h5>
-                    <ul class="list text-white-50 ml-5 py-2 text-left text-capitalize">
-                        <li class="list-item">Français : Parlé et écrit</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-8 bg-light text-dark py-4 px-5">
-                <div class="header-right">
-                     <h4 class="text-uppercase">Compétences professionnelles</h4>
-                      <hr>
-                    <ul class="list text-dark   ml-5 py-2 text-right text-capitalize">
-                        <h5 class="text-uppercase bg-white text-dark py-2">Compétences Informatiques</h5>
-                        <li class="list-item">Excellent maitrise de MS-Office</li>
-                        <li class="list-item">Certification openclassroom développement web en HTML5 & CSS3, PHP, MYSQL ET JAVASCRIPT</li>
-                        <li class="list-item">Certificat sololearn en web development fundamentals cours</li>
-                        <li class="list-item">Maitrise du langage B4A</li>
-                    </ul>
-                    <h5 class="text-uppercase bg-white text-dark py-2">Maintenance software</h5>
-                        <ul class="list text-dark   ml-5 py-2 text-right text-capitalize">
-                        <li class="list-item">Installation et configuration du système exploitation Windows</li>
-                        <li class="list-item">Réparation des drives</li>
-                    </ul>
-                    <h5 class="text-uppercase bg-white text-dark py-2">Formations professionnelle</h5>
-                    <hr>
-                    <ul class="list text-dark   ml-5 py-2 text-right text-capitalize">
-                        <li class="list-item">juillet – décembre 2021 : formation en développement web à LCB Bacongo</li>
-                        <li class="list-item">juillet – décembre 2021 : participation au séminaire de formation en déontologie à LCB Bacongo </li>
-                        <li class="list-item">Août 2018 - juillet 2020 : formation en ligne en développement web chez Openclassroom</li>
-                    </ul>
-                    <h5 class="text-uppercase bg-white text-dark py-2">Expérience professionnelle</h5>
-                    <hr>
-                    <ul class="list text-dark   ml-5 py-2 text-right text-capitalize">
-                        <li class="list-item">Mai 2019- Juin 21 Webmaster et designer à Vancoume Afrique</li>
-                        <li class="list-item">Juillet 2020 - Octobre 2021 gérant d’une cafeteria (compte privée) </li>
-
-                    </ul>
-                    <h5 class="text-uppercase bg-white text-dark py-2">Qualités et Atouts</h5>
-                    <hr>
-                    <ul class="list text-dark   ml-5 py-2 text-right text-capitalize">
-                        <li class="list-item">Esprit d’équipe</li>
-                        <li class="list-item">Ambitieux</li>
-                        <li class="list-item">Rigoureux</li>
-                        <li class="list-item">Persévérant</li>
-                    </ul>
-                </div>
-            </div>
+      <div>
+        <p class="section-label">Cursus scolaire</p>
+        <div class="edu-item">
+          <p class="edu-year">Juin 2026</p>
+          <p class="edu-title">Licence en génie informatique</p>
+          <p class="edu-place">École communautaire de l'enseignement supérieur · Brazzaville</p>
         </div>
-    
+        <div class="edu-item">
+          <p class="edu-year">Juin 2021</p>
+          <p class="edu-title">Baccalauréat technique en sciences économiques</p>
+          <p class="edu-place">Lycée technique 1er mai · Brazzaville</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-year">Juin 2018</p>
+          <p class="edu-title">BEPC</p>
+          <p class="edu-place">CEG Amitié · Bacongo-Brazzaville</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-year">Juin 2014</p>
+          <p class="edu-title">CEPE</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-label">Langues</p>
+        <div class="lang-bar">
+          <span>Français</span>
+          <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
+          <span style="font-size:11px">C2</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-label">Loisirs</p>
+        <div class="hobbies">
+          <span class="hobby-pill">Musique</span>
+          <span class="hobby-pill">Handball</span>
+          <span class="hobby-pill">Course à pied</span>
+          <span class="hobby-pill">Sport</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <div>
+        <p class="main-section-label">Compétences techniques</p>
+        <div class="skill-grid">
+          <span class="skill-tag">HTML5 / CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">.NET / C#</span>
+          <span class="skill-tag">SPFx</span>
+          <span class="skill-tag">Power Platform</span>
+          <span class="skill-tag">PowerShell</span>
+          <span class="skill-tag">PHP / MySQL</span>
+          <span class="skill-tag">MS Office</span>
+          <span class="skill-tag">Windows (install / config)</span>
+          <span class="skill-tag">B4A</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="main-section-label">Expériences professionnelles</p>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <p class="tl-date">Mai 2019 – Juin 2021</p>
+            <p class="tl-title">Webmaster & Designer</p>
+            <p class="tl-place">Vancoume Afrique</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <p class="tl-date">Juil. 2020 – Oct. 2021</p>
+            <p class="tl-title">Gérant de cafétéria</p>
+            <p class="tl-place">Compte privé</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="main-section-label">Formations professionnelles</p>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <p class="tl-date">Juil. – Déc. 2021</p>
+            <p class="tl-title">Développement web & séminaire de déontologie</p>
+            <p class="tl-place">LCB Bacongo</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <p class="tl-date">Août 2018 – Juil. 2020</p>
+            <p class="tl-title">Formation en ligne — développement web</p>
+            <p class="tl-place">OpenClassrooms</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="main-section-label">Qualités & atouts</p>
+        <div class="qualities">
+          <div class="quality-card"><i class="fa fa-users"></i> Esprit d'équipe</div>
+          <div class="quality-card"><i class="fa fa-bullseye"></i> Ambitieux</div>
+          <div class="quality-card"><i class="fa fa-check-double"></i> Rigoureux</div>
+          <div class="quality-card"><i class="fa fa-fire"></i> Persévérant</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
